@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+<link rel="stylesheet" type="text/css" href="StyleSheet/formatacao.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    
+     <!--Jquery Cookie-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ashishblog.com/ash/source/jquery.cookie.js"></script>
+  
+    <script type="text/javascript">
+
+$(document).ready(function(){
+	
+		  (function ($) {
+            $.QueryString = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.search.substr(1).split('&'));
+        })(jQuery);
+		
+		
+		texto = $.QueryString['texto'];	
+		$('#txtwrite').text(texto);
+		});
+		
+var texto;
+	var url = "quero.html?texto=";  
+	
+        $(document).delegate('#btnwrite1', 'click', function (e) {
+            //$.cookie('test1', $('#txtwrite').val('com sede!'));
+			texto=" quero ";
+			$('#txtwrite').text(texto);
+			$('#btnwrite1').attr('href',url+texto);
+          });
+		  
+		  $(document).delegate('#btnwrite1', 'click', function (e) {
+            //$.cookie('test1', $('#txtwrite').val('com sede!'));
+			texto=" quero ";
+			$('#txtwrite').text(texto);
+			$('#btnwrite2').attr('href',url+texto);
+          });
+	
+	</script>   
+    
+<title>SpcMobile</title>
+
+</head>
+
+<body>
+<div data-role="page" id="page">
+
+  <div data-role="header" data-theme="a">
+    <h1>SpcMobile</h1>
+  </div>
+  
+  <div data-role="content" class="buttons">
+  
+   <div data-role="fieldcontain" class="fieldcontain">
+  
+  <h2><p id="txtwrite"></p></h2>
+  
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" rel="external" id="btnwrite1" href="#" data-transition="flow">
+  <img class="img_info" src="Imagens/GIF/quero.gif"  alt="Quero"/>
+  <h1>Quero</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" rel="external" id="btnwrite2" href="#" data-transition="flow">
+  <img class="img_info" src="Imagens/GIF/estar.gif" alt="Estou">
+  <h1>Estou</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" data-rel="external" href="index.html" data-transition="flow">
+  <img class="img_info" src="Imagens/GIF/voltarr.gif"  alt="Voltar"/>
+  <h1>Voltar</h1>
+  </a>
+  </div>
+    
+</div>   
+</body>
+</html>

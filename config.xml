@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.phonegap.example"
+    version   = "1.0.0">
+
+<name>SpcMobile</name>
+
+<icon src="Imagens/logoapp.png">
+</icon>
+
+<description>
+SpcMobile
+</description>
+
+<author href="#" email="#">
+João Lopes
+</author>
+
+<preference name="splash-screen-duration" value="1" />
+<preference name="exit-on-suspend" value="true" />
+<preference name="orientation" value="landscape" />
+
+</widget>

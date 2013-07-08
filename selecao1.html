@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+<link rel="stylesheet" type="text/css" href="StyleSheet/formatacao.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    
+           <!--Jquery Cookie-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ashishblog.com/ash/source/jquery.cookie.js"></script>
+    
+    <script type="text/javascript">
+	var texto;
+	var url;  
+		
+		$(document).delegate('#btnemergencia', 'click', function (e) {
+			url = "emergencia01.html";
+			$('#btnemergencia').attr('href',url);
+          });
+		  
+		  $(document).delegate('#btnmisclania', 'click', function (e) {
+			url = "misclania01.html";
+			$('#btnmisclania').attr('href',url);
+          });
+		  
+		$(document).delegate('#btnescola', 'click', function (e) {
+			url = "escola01.html";
+			$('#btnescola').attr('href',url);
+          });
+		  
+		$(document).delegate('#btnvoltar', 'click', function (e) {
+			url = "selecao.html";
+			$('#btnvoltar').attr('href',url);
+          });			 
+	
+	</script> 
+    
+<title>SpcMobile</title>
+
+</head>
+
+<body>
+<div data-role="page" id="page">
+
+  <div data-role="header" data-theme="a">
+    <h1>SpcMobile</h1>
+  </div>
+  
+<div class="areatexto">
+  
+  <h2 class="writetext"><p id="txtwrite"></p></h2>
+  
+  </div>
+  
+  <div data-role="content" class="buttons">
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnemergencia" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/emergencia.gif"  alt="Emergência"/>
+  <h1>Emergência</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnmisclania" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/miscelanea.gif" alt="Miscelânea">
+  <h1>Miscelânea</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnescola" rel="external" href="#" >
+  <img class="img_info" src="Imagens/GIF/escola.gif" alt="Escola">
+  <h1>Escola</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes" data-inline="true">
+  <a data-role="button" id="btnvoltar" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/voltarr.gif"  alt="Voltar"/>
+  <h1>Voltar</h1>
+  </a>
+  </div>
+  
+</div>   
+
+</body>
+</html>

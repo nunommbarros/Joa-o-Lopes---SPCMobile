@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+<link rel="stylesheet" type="text/css" href="StyleSheet/formatacao.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    
+         <!--Jquery Cookie-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ashishblog.com/ash/source/jquery.cookie.js"></script>
+  
+    <script type="text/javascript">
+
+var texto;
+var url;
+
+$(document).ready(function(){
+	
+		  (function ($) {
+            $.QueryString = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.search.substr(1).split('&'));
+        })(jQuery);
+		
+		
+		texto = $.QueryString['texto'];	
+		$('#txtwrite').text(texto);
+		});
+		
+		$(document).delegate('#btnrecomecar', 'click', function (e) {
+			url = "selecao.html";
+			$('#btnrecomecar').attr('href',url);
+          });
+		
+	</script>
+        
+<title>SpcMobile</title>
+
+</head>
+
+<body>
+<div data-role="page" id="page">
+
+  <div data-role="header" data-theme="a">
+    <h1>SpcMobile</h1>
+  </div>
+  
+<div class="areatexto">
+  
+  <h2 class="writetext"><p id="txtwrite"></p></h2>
+  
+  </div>
+  
+  <div data-role="content" class="buttons">
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnrecomecar" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/recomecar.gif"  alt="Recomeçar"/>
+  <h1>Recomeçar</h1>
+  </a>
+  </div>
+    
+</div>   
+
+</body>
+</html>

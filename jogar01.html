@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+<link rel="stylesheet" type="text/css" href="StyleSheet/formatacao.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    
+         <!--Jquery Cookie-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ashishblog.com/ash/source/jquery.cookie.js"></script>
+  
+    <script type="text/javascript">
+
+var texto;
+var url;
+
+$(document).ready(function(){
+	
+		  (function ($) {
+            $.QueryString = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.search.substr(1).split('&'));
+        })(jQuery);
+		
+		
+		texto = $.QueryString['texto'];	
+		$('#txtwrite').text(texto);
+		});
+		
+		$(document).delegate('#btnwrite1', 'click', function (e) {
+			url = "recomecar.html?texto=";
+			texto=texto + " às escondidas ";
+			$('#txtwrite').text(texto);
+			$('#btnwrite1').attr('href',url+texto);
+          });
+		  
+		$(document).delegate('#btnwrite2', 'click', function (e) {
+			url = "recomecar.html?texto=";
+			texto=texto + " ping-pong ";
+			$('#txtwrite').text(texto);
+			$('#btnwrite2').attr('href',url+texto);
+          });
+		  
+		  $(document).delegate('#btnwrite3', 'click', function (e) {
+			url = "recomecar.html?texto=";
+			texto=texto + " às cartas ";
+			$('#txtwrite').text(texto);
+			$('#btnwrite3').attr('href',url+texto);
+          });
+		  
+		$(document).delegate('#btnwrite4', 'click', function (e) {
+			url = "recomecar.html?texto=";
+			texto=texto + " dados ";
+			$('#txtwrite').text(texto);
+			$('#btnwrite4').attr('href',url+texto);
+          });
+		  
+		//$(document).delegate('#btnvoltar', 'click', function (e) {
+			//url = "palavra1.html?texto=";
+			//$('#btnvoltar').attr('href',url+texto);
+          //});
+		  
+		$(document).delegate('#btnavancar', 'click', function (e) {
+			url = "jogar02.html?texto=";
+			$('#txtwrite').text(texto);
+			$('#btnavancar').attr('href',url+texto);
+          });
+		  
+		  $(document).delegate('#btnvoltar', 'click', function (e) {
+			history.go(-1);
+          });
+
+    </script>
+	
+<title>SpcMobile</title>
+
+</head>
+
+<body>
+<div data-role="page" id="page">
+
+  <div data-role="header" data-theme="a">
+    <h1>SpcMobile</h1>
+  </div>
+  
+ <div class="areatexto">
+  
+  <h2 class="writetext"><p id="txtwrite"></p></h2>
+  
+  </div>
+  
+  <div data-role="content" class="buttons">
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnwrite1" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/escondidas.gif"  alt="Escondidas"/>
+  <h1>Escondidas</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnwrite2" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/ping-pong.gif" alt="Ping-Pong">
+  <h1>Ping-Pong</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnwrite3" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/cartas.gif"  alt="Cartas"/>
+  <h1>Cartas</h1>
+  </a>
+  </div>
+  
+   <div class="div_opcoes">
+  <a data-role="button" id="btnvoltar" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/voltarr.gif"  alt="Voltar"/>
+  <h1>Voltar</h1>
+  </a>
+  </div>
+  
+   <div class="div_opcoes">
+  <a data-role="button" id="btnwrite4" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/dados.gif"  alt="Dados"/>
+  <h1>Dados</h1>
+  </a>
+  </div>
+  
+  <div class="div_opcoes">
+  <a data-role="button" id="btnavancar" rel="external" href="#">
+  <img class="img_info" src="Imagens/GIF/avancar.gif" alt="Avançar">
+  <h1>Avançar</h1>
+  </a>
+  </div>
+    
+</div>   
+</body>
+</html>
